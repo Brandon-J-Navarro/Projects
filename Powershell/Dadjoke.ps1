@@ -53,7 +53,7 @@ Function Voiceover
 }
 
 <#
-this is the get-dadjoke function that miguel showed us
+this is the get-dadjoke function
 Credit https://community.spiceworks.com/scripts/show/4597-get-dadjoke
 #>
 Function Get-DadJoke 
