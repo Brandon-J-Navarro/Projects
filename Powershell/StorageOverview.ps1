@@ -1,4 +1,3 @@
-$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText
 Get-PSDrive -name <#driveleter#> | 
     Select-Object @{name="File Path";Expression="Root"},
     @{name='Used (GB)';expression={($_.used/1gb).tostring("#.##")}},
