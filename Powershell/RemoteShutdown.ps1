@@ -8,6 +8,8 @@ This new version uses RSA SSh Keys to connect to remote hosts
 Once the uninterruptible power supply (UPS) starts the shutdown process, 
 Task Scheduler will start this script based off the event ID that the UPS generates
 
+Need to revalidate now that more that more than one host is being shutdown 
+
 #>
 $linux = New-PSSession -HostName <#IP ADDRESS#> -UserName <#USERNAME#> -KeyFilePath 'C:\FILE\PATH\TO\RSA\FILE'
 
@@ -37,7 +39,7 @@ Invoke-Command -Session $hyperv -AsJob -JobName hyperv -ScriptBlock {
 Invoke-Command -Session $nas -AsJob -JobName nas -ScriptBlock {
     Get-Date
     hostname
-    Get-PSDrive -name C,S | 
+    Get-PSDrive -name <#DRIVE,LETTERS#> | 
     Select-Object @{name="File Path";Expression="Root"},
     @{name='Used (GB)';expression={($_.used/1gb).tostring("#.##")}},
     @{name='Free (GB)';expression={($_.free/1gb).tostring("#.##")}},
@@ -47,6 +49,6 @@ Invoke-Command -Session $nas -AsJob -JobName nas -ScriptBlock {
     }
 
 
-Start-Sleep 60s
+Start-Sleep 120s
 
 Receive-Job -name linux,hyperv,nas | Out-File C:\FILE\PATH\TO\OUTPUT\FILE.txt
