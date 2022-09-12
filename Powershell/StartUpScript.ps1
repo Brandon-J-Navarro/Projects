@@ -3,43 +3,42 @@
 Start Up Sctipt 
 Version 2.0
 
-☐ - uncomplete / needs testing
+☐ - uncomplete / testing
 ☑ - complete / tested
 ☒ - does not work / task scraped 
 
-Start up Script
-    - Ideas
-        ☑ - Ask to start up Blank? (Default Yes) hit "Enter" for "Blank Startup" and exit or hit "No" for next prompt
-        ☐ - Time out count down after set time default to blank
-                - need to look into this more
 
-        ☑ - If not ask if im "Working"? (Default Yes) hit "Enter" for "Working Startup" and exit or hit "No" for next prompt
-            ☑ - Open applications
-                ☑ - Outlook
-                ☑ - OneNote (Work)
-                ☑ - Teams
-                ☑ - Chrome
-                    ☑ - Open Tabs
+V2.0 Rework Ideas
+    ☑ - Ask to start up Blank? (Default Yes) hit "Enter" for "Blank Startup" and exit or hit "No" for next prompt
+    ☐ - Time out count down after set time default to blank
+            - need to look into this more
 
-        ☑ - If there is no further prompts after hitting "No" on previous prompt proceed to exit and "Blank Startup"
+    ☑ - If not ask if im "Working"? (Default Yes) hit "Enter" for "Working Startup" and exit or hit "No" for next prompt
+        ☑ - Open applications
+            ☑ - Outlook
+            ☑ - OneNote (Work)
+            ☑ - Teams
+            ☑ - Chrome
+                ☑ - Open Tabs
 
-        ☒ - Struggling to find a way to use an object arry of objects like "$work = $process1,$process2,$process3,$process4"
-          to run with "Start-Process" or "Invoke-Expression"
-          For now there will be individual instances of "Start-Process" and "Invoke-Expression"
+    ☑ - If there is no further prompts after hitting "No" on previous prompt proceed to exit and "Blank Startup"
 
-        ☒ - foreach ($work in $work) {invoke-expression $process5} fixed that issue 
+    ☒ - Struggling to find a way to use an object arry of objects like "$work = $process1,$process2,$process3,$process4"
+        to run with "Start-Process" or "Invoke-Expression"
+        For now there will be individual instances of "Start-Process" and "Invoke-Expression"
 
-        ☑ - add delay between each application opening
-                - went back to starting indvidual processes that way i can add a delay between each application opening easily
+    ☒ - foreach ($work in $work) {invoke-expression $process5} fixed that issue 
 
-    ☐ - Thoughts for later ideas              
-        ☐ - Possibly ask if i am "Devloping"? 
-            ☐ - Open applications
-                ☐ - VSCode
-                ☐ - OneNote (IT Notes)
-                ☐ - GitHub Desktop
-                ☐ - Firefox
-                    ☐ - Open Tabs
+    ☑ - add delay between each application opening
+            - went back to starting indvidual processes that way i can add a delay between each application opening easily
+             
+    ☐ - Possibly ask if i am "Devloping"? 
+        ☐ - Open applications
+            ☐ - VSCode
+            ☐ - OneNote (IT Notes)
+            ☐ - GitHub Desktop
+            ☐ - Firefox
+                ☐ - Open Tabs
 
     
 $question3 = 'Are you developing?'
@@ -60,7 +59,7 @@ if ($decision2 -eq 0) {
     exit
 
     
-    #>
+#>
 
 $chrome = 'Start-Process -FilePath "C:\<File\Path>\chrome.exe" -ArgumentList  "URL","URL","URL"'
 $outlook = 'Start-Process -FilePath "C:\<File\Path>\OUTLOOK.EXE"'

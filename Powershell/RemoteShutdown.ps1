@@ -3,14 +3,35 @@
 Remote shutdown script
 Version 2.0
 
-This new version uses RSA SSh Keys to connect to remote hosts
+**NOTE**    This script is for in the even of a power outage my UPS
+            Hosts will get shutdown gracefully
+            UPS can only shutdown one host via USB
+            This script will allow the other hosts to be shut down as well 
+            Based off the Event ID the UPS Generates
 
-Once the uninterruptible power supply (UPS) starts the shutdown process, 
-Task Scheduler will start this script based off the event ID that the UPS generates
+☐ - uncomplete / testing
+☑ - complete / tested
+☒ - does not work / task scraped 
 
-Need to revalidate now that more that more than one host is being shutdown 
+V2.0 Rework Ideas
+    ☑ - Get Host Names and Date and time so I can track the outage 
+    ☑ - Use RSA SSH Keys to connect to remote hosts
+    ☐ - Docker Host
+        ☐ - Shutdown Docker Containers
+        ☐ - Shutdown Docker Host once Containers have stopped
+    ☐ - Hyper-V Host
+        ☐ - Shutdown Hyper-V VMs
+        ☐ - Shutdown Hyper-V Host once VMs have shutdown
+    ☑ - NAS
+        ☑ - Get a overview of NAS Storage
+
+    ☐ - Reverify uninterruptible power supply (UPS) starts the shutdown process, 
+        (Need to revalidate now that more that more than one host is being shutdown,
+        changed to RSA keys and there is enough time now that containers and VMs are being stopped as well)
+        ☐ - Task Scheduler will start this script based off the event ID that the UPS generates
 
 #>
+
 $linux = New-PSSession -HostName <#IP ADDRESS#> -UserName <#USERNAME#> -KeyFilePath 'C:\FILE\PATH\TO\RSA\FILE'
 
 $hyperv = New-PSSession -HostName <#IP ADDRESS#> -UserName <#USERNAME#> -KeyFilePath 'C:\FILE\PATH\TO\RSA\FILE'
@@ -51,4 +72,4 @@ Invoke-Command -Session $nas -AsJob -JobName nas -ScriptBlock {
 
 Start-Sleep 120s
 
-Receive-Job -name linux,hyperv,nas | Out-File C:\FILE\PATH\TO\OUTPUT\FILE.txt
+Receive-Job -name linux,hyperv,nas | Out-File <#C:\FILE\PATH\TO\OUTPUT\FILE.txt#>

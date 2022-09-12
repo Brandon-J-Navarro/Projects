@@ -1,4 +1,26 @@
 <#
+
+Dad Joke Sctipt 
+Version 1.0
+
+**NOTE**    This will only work if narrator is alresady enabled 
+            The popups are disbaled when activated
+            Able to be activated with default Windows key Strokes "Ctrl+Win+Enter"
+
+
+☐ - uncomplete / testing
+☑ - complete / tested
+☒ - does not work / task scraped 
+
+Ideas
+    ☑ - Have a pop up that displays Joke from the Get-DadJoke Function
+    ☑ - Have Windows Narrator read the Joke
+        ☑ - Find a way to call for the narrator automatically
+    ☐ - Turn off Narrrator automatically afterwards
+
+#>
+
+<#
 this $source block is to add the "Windows" key as a function you can call since its not built in natively 
 Credit to https://github.com/stefanstranger/PowerShell/blob/master/WinKeys.ps1
 #>
