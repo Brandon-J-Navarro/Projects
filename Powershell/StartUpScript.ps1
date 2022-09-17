@@ -18,6 +18,17 @@ V2.0 Rework Ideas
             ☑ - Outlook
             ☑ - OneNote (Work)
             ☑ - Teams
+                 ☑ - Fix error when starting Teams process
+                    "Error while parsing hooks JSON. Error: ENOENT: no such file or directory, open 'C:\<FILE\PATH>\Microsoft\Teams\hooks.json'
+                    (node:15140) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+                    (node:15140) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 ecsSettingsUpdated listeners added to [EventEmitter]. Use emitter.setMaxListeners() to increase limit
+                    (node:15140) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 appInitialized listeners added to [EventEmitter]. Use emitter.setMaxListeners() to increase limit"
+
+                    Teams Shortcut uses these valuse to start so I should probably replicate that
+                    Target: "C:\<FILE\PATH>Microsoft\Teams\Update.exe --processStart "Teams.exe""
+                    Start in: "C:\<FILE\PATH>\Microsoft\Teams"
+
+                    start-process -FilePath "C:\<FILE\PATH>\Microsoft\Teams\Update.exe" -WorkingDirectory "C:\<FILE\PATH>\Microsoft\Teams" -ArgumentList "--processStart  Teams.exe" Fiexes that error
             ☑ - Chrome
                 ☑ - Open Tabs
 
