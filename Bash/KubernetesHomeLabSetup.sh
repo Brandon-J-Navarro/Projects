@@ -1,4 +1,4 @@
-#FROM
+#Sample Credit :
     #SOURCES :   
         #https://www.virtualizationhowto.com/2021/06/kubernetes-home-lab-setup-step-by-step/
         #https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-dashboard/
