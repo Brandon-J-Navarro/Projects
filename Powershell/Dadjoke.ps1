@@ -16,7 +16,7 @@ Ideas
     ☑ - Have a pop up that displays Joke from the Get-DadJoke Function
     ☑ - Have Windows Narrator read the Joke
         ☑ - Find a way to call for the narrator automatically
-    ☐ - Turn off Narrrator automatically afterwards
+    ☑ - Turn off Narrrator automatically afterwards
 
 #>
 
@@ -94,3 +94,7 @@ $wshell = New-Object -ComObject Wscript.Shell
 Voiceover
 
 ($wshell.Popup($joke,0,"Dad Joke",0))
+
+Voiceover
+
+Exit
