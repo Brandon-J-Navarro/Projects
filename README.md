@@ -6,6 +6,7 @@ Currently this is mostly PowerShell but eventually will grow to include Bash, YA
 
 
 # [PowerShell](https://github.com/Brandon-J-Navarro/Projects/tree/main/Powershell)
+# [Bash](https://github.com/Brandon-J-Navarro/Projects/tree/main/Bash)
 
 Check out some of the PowerShell scripts I've been working on. \
 [Dad Joke](https://github.com/Brandon-J-Navarro/Projects/blob/main/Powershell/Dadjoke.ps1) \
